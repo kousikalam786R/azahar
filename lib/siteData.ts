@@ -1,8 +1,8 @@
 export const business = {
-  name: "Shree Digital Service Center",
+  name: "Ashique Digital Service Center",
   phoneDisplay: "+91 98765 43210",
-  phoneRaw: "919876543210",
-  whatsappNumber: "919876543210",
+  phoneRaw: "919521117176",
+  whatsappNumber: "919521117176",
   address: "Main Road, Near Bus Stand, Your City, India",
   facebookUrl: "https://facebook.com/",
   instagramUrl: "https://instagram.com/",
