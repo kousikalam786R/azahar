@@ -9,9 +9,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const resolvedLocale = locales.includes(locale as Locale)
     ? (locale as Locale)
     : defaultLocale;
+  const messagesModule = await import(`../messages/${resolvedLocale}.json`);
 
   return {
     locale: resolvedLocale,
-    messages: (await import(`../messages/${resolvedLocale}.json`)).default
+    messages: (messagesModule as { default?: Record<string, unknown> }).default ?? messagesModule
   };
 });

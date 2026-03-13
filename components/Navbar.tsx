@@ -3,18 +3,20 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { business, whatsappUrl } from "@/lib/siteData";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navItems = [
-  { id: "home" },
-  { id: "services" },
-  { id: "about" },
-  { id: "contact" }
+  { id: "home", anchor: "home" },
+  { id: "services", anchor: "services" },
+  { id: "products", path: "products" },
+  { id: "about", anchor: "about" },
+  { id: "contact", anchor: "contact" }
 ];
 
 export default function Navbar() {
+  const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("navbar");
   const whatsapp = useTranslations("whatsapp");
@@ -28,13 +30,13 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={`#${item.id}`}
+              href={item.path ? `/${locale}/${item.path}` : `/${locale}#${item.anchor}`}
               className="text-sm font-medium text-slate-600 transition hover:text-brand-600"
             >
               {t(item.id)}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -43,7 +45,7 @@ export default function Navbar() {
           <Link
             href={whatsappUrl(whatsapp("general"))}
             target="_blank"
-            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-green-600"
           >
             <FaWhatsapp />
             {t("whatsappNow")}
@@ -64,20 +66,20 @@ export default function Navbar() {
         <div className="border-t border-slate-200 bg-white md:hidden">
           <div className="section-shell flex flex-col gap-3 py-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.id}
-                href={`#${item.id}`}
+                href={item.path ? `/${locale}/${item.path}` : `/${locale}#${item.anchor}`}
                 onClick={() => setIsOpen(false)}
                 className="text-sm font-medium text-slate-700"
               >
                 {t(item.id)}
-              </a>
+              </Link>
             ))}
             <LanguageSwitcher onNavigate={() => setIsOpen(false)} />
             <Link
               href={whatsappUrl(whatsapp("general"))}
               target="_blank"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm font-semibold text-white"
             >
               <FaWhatsapp />
               {t("whatsappNow")}

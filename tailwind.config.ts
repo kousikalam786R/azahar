@@ -12,11 +12,11 @@ const config: Config = {
           600: "#1d4ed8",
           700: "#1e40af"
         },
-        surface: "#f8fafc",
-        whatsapp: "#25D366"
+        surface: "#f9fafb",
+        whatsapp: "#22C55E"
       },
       boxShadow: {
-        soft: "0 8px 30px rgba(37, 99, 235, 0.08)"
+        soft: "0 10px 28px rgba(15, 23, 42, 0.08)"
       },
       keyframes: {
         fadeUp: {

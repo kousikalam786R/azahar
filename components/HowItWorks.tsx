@@ -8,7 +8,7 @@ export default function HowItWorks() {
   const steps = t.raw("steps") as Array<{ title: string; description: string }>;
 
   return (
-    <section className="bg-white py-16 md:py-20">
+    <section className="bg-white py-20 md:py-24">
       <div className="section-shell">
         <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
           {t("title")}
@@ -17,10 +17,7 @@ export default function HowItWorks() {
           {steps.map((step, index) => {
             const Icon = stepIcons[index];
             return (
-            <article
-              key={step.title}
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft"
-            >
+            <article key={step.title} className="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">
                 {index + 1}
               </div>

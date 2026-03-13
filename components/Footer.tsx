@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { business, whatsappUrl } from "@/lib/siteData";
 
 export default function Footer() {
+  const locale = useLocale();
   const t = useTranslations("footer");
   const navbar = useTranslations("navbar");
   const whatsapp = useTranslations("whatsapp");
@@ -22,18 +23,21 @@ export default function Footer() {
             {t("quickLinks")}
           </h3>
           <div className="mt-3 flex flex-col gap-2 text-sm">
-            <a href="#home" className="hover:text-white">
+            <Link href={`/${locale}#home`} className="hover:text-white">
               {navbar("home")}
-            </a>
-            <a href="#services" className="hover:text-white">
+            </Link>
+            <Link href={`/${locale}#services`} className="hover:text-white">
               {navbar("services")}
-            </a>
-            <a href="#about" className="hover:text-white">
+            </Link>
+            <Link href={`/${locale}/products`} className="hover:text-white">
+              {navbar("products")}
+            </Link>
+            <Link href={`/${locale}#about`} className="hover:text-white">
               {navbar("about")}
-            </a>
-            <a href="#contact" className="hover:text-white">
+            </Link>
+            <Link href={`/${locale}#contact`} className="hover:text-white">
               {navbar("contact")}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -45,7 +49,7 @@ export default function Footer() {
             <Link
               href={whatsappUrl(whatsapp("general"))}
               target="_blank"
-              className="rounded-full bg-whatsapp p-2 text-white"
+              className="rounded-full bg-green-500 p-2 text-white transition hover:bg-green-600"
             >
               <FaWhatsapp />
             </Link>

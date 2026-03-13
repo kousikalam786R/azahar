@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Home",
     "services": "Services",
+    "products": "Products",
     "about": "About",
     "contact": "Contact",
     "whatsappNow": "WhatsApp Now",
@@ -128,6 +129,17 @@
     "whatsappMessage": "I want information about {service}",
     "helperTitle": "Need help with this service?",
     "helperText": "Share your requirement and we will guide you quickly."
+  },
+  "products": {
+    "title": "Electronics Accessories",
+    "subtitle": "Browse popular electronics accessories with reliable quality and affordable pricing.",
+    "viewDetails": "View Details"
+  },
+  "productDetails": {
+    "features": "Features",
+    "price": "Price",
+    "helperText": "Need this item? Message us on WhatsApp and place your order quickly.",
+    "orderWhatsapp": "Order on WhatsApp"
   },
   "footer": {
     "blurb": "Your trusted local partner for digital and financial services.",

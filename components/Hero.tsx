@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-slate-100">
       <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-100 blur-3xl" />
-      <div className="section-shell grid gap-10 py-16 md:grid-cols-2 md:py-24">
+      <div className="section-shell grid gap-10 py-20 md:grid-cols-2 md:py-28">
         <div className="animate-fade-up">
           <p className="mb-3 inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-brand-700 shadow-soft">
             {t("badge")}
@@ -28,14 +28,14 @@ export default function Hero() {
             <Link
               href={whatsappUrl(whatsapp("hero"))}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-green-600"
             >
               <FaWhatsapp />
               {t("whatsapp")}
             </Link>
             <Link
               href={`tel:${business.phoneRaw}`}
-              className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-5 py-3 text-sm font-semibold text-brand-700 transition hover:border-brand-500"
+              className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-5 py-3 text-sm font-semibold text-blue-700 transition hover:border-blue-500"
             >
               <FaPhoneAlt />
               {t("callNow")}
@@ -43,7 +43,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="animate-fade-up rounded-3xl border border-slate-200 bg-white p-4 shadow-soft">
+        <div className="animate-fade-up rounded-xl border border-slate-200 bg-white p-4 shadow-md">
           <img
             src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1200&q=80"
             alt="Digital service and financial support illustration"

@@ -6,7 +6,8 @@
     "contact": "যোগাযোগ",
     "whatsappNow": "হোয়াটসঅ্যাপ এখন",
     "menu": "মেনু",
-    "language": "ভাষা"
+    "language": "ভাষা",
+    "products": "Products"
   },
   "hero": {
     "badge": "বিশ্বস্ত স্থানীয় ডিজিটাল পরিষেবা",
@@ -147,5 +148,16 @@
     "general": "হ্যালো, আপনার পরিষেবাগুলোর বিস্তারিত জানতে চাই।",
     "hero": "হ্যালো, আমি আপনার পরিষেবাগুলো সম্পর্কে জানতে চাই।",
     "floating": "হ্যালো, আমি আপনার পরিষেবাগুলো সম্পর্কে আরও জানতে চাই।"
+  },
+  "products": {
+    "title": "Electronics Accessories",
+    "subtitle": "Browse popular electronics accessories with reliable quality and affordable pricing.",
+    "viewDetails": "View Details"
+  },
+  "productDetails": {
+    "features": "Features",
+    "price": "Price",
+    "helperText": "Need this item? Message us on WhatsApp and place your order quickly.",
+    "orderWhatsapp": "Order on WhatsApp"
   }
 }

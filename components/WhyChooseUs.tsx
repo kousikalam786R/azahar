@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
   const features = t.raw("features") as string[];
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-20 md:py-24">
       <div className="section-shell">
         <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
           {t("title")}
@@ -17,10 +17,7 @@ export default function WhyChooseUs() {
           {features.map((feature, index) => {
             const Icon = featureIcons[index];
             return (
-              <article
-                key={feature}
-                className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-soft"
-              >
+              <article key={feature} className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-md">
                 {Icon ? <Icon className="mx-auto text-2xl text-brand-600" /> : null}
                 <h3 className="mt-3 text-sm font-semibold text-slate-900">{feature}</h3>
               </article>

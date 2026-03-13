@@ -6,7 +6,8 @@
     "contact": "संपर्क करें",
     "whatsappNow": "व्हाट्सऐप अब",
     "menu": "मेनू",
-    "language": "भाषा"
+    "language": "भाषा",
+    "products": "Products"
   },
   "hero": {
     "badge": "विश्वसनीय स्थानीय डिजिटल सेवाएं",
@@ -147,5 +148,16 @@
     "general": "नमस्ते, मुझे आपकी सेवाओं के बारे में जानकारी चाहिए।",
     "hero": "नमस्ते, मैं आपकी सेवाओं के बारे में जानना चाहता/चाहती हूँ।",
     "floating": "नमस्ते, मैं आपकी सेवाओं के बारे में और जानकारी चाहता/चाहती हूँ।"
+  },
+  "products": {
+    "title": "Electronics Accessories",
+    "subtitle": "Browse popular electronics accessories with reliable quality and affordable pricing.",
+    "viewDetails": "View Details"
+  },
+  "productDetails": {
+    "features": "Features",
+    "price": "Price",
+    "helperText": "Need this item? Message us on WhatsApp and place your order quickly.",
+    "orderWhatsapp": "Order on WhatsApp"
   }
 }

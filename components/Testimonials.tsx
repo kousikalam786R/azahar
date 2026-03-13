@@ -6,14 +6,14 @@ export default function Testimonials() {
   const reviews = t.raw("reviews") as Array<{ name: string; text: string }>;
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-20 md:py-24">
       <div className="section-shell">
         <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
           {t("title")}
         </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {reviews.map((review) => (
-            <article key={review.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+            <article key={review.name} className="rounded-xl border border-slate-200 bg-white p-6 shadow-md">
               <div className="flex gap-1 text-amber-400">
                 <FaStar />
                 <FaStar />

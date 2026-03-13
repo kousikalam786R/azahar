@@ -8,7 +8,7 @@ export default function Contact() {
   const whatsapp = useTranslations("whatsapp");
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-20">
+    <section id="contact" className="bg-white py-20 md:py-24">
       <div className="section-shell grid gap-8 lg:grid-cols-2">
         <div>
           <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{t("title")}</h2>
@@ -29,7 +29,7 @@ export default function Contact() {
             <Link
               href={whatsappUrl(whatsapp("general"))}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-600"
             >
               <FaWhatsapp />
               {t("whatsapp")}
@@ -37,7 +37,7 @@ export default function Contact() {
             <Link
               href={business.facebookUrl}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
             >
               <FaFacebookF />
               {t("facebook")}
@@ -45,7 +45,7 @@ export default function Contact() {
             <Link
               href={business.instagramUrl}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
             >
               <FaInstagram />
               {t("instagram")}
@@ -53,7 +53,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-soft">
+        <div className="overflow-hidden rounded-xl border border-slate-200 shadow-md">
           <iframe
             src={business.mapEmbedUrl}
             width="100%"

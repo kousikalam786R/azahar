@@ -1,8 +1,8 @@
 export const business = {
   name: "Digital Azahar",
-  phoneDisplay: "+91 9521117176",
-  phoneRaw: "9521117176",
-  whatsappNumber: "9521117176",
+  phoneDisplay: "+91 7550937255",
+  phoneRaw: "7550937255",
+  whatsappNumber: "7550937255",
   address: "Main Road, Near Bus Stand, Your City, India",
   facebookUrl: "https://facebook.com/",
   instagramUrl: "https://instagram.com/",

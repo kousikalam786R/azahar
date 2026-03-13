@@ -29,7 +29,7 @@ export default function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="py-16 md:py-20">
+    <section id="services" className="py-20 md:py-24">
       <div className="section-shell">
         <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
           {t("title")}
