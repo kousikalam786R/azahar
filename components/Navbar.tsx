@@ -3,17 +3,21 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 import { business, whatsappUrl } from "@/lib/siteData";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "services", label: "Services" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" }
+  { id: "home" },
+  { id: "services" },
+  { id: "about" },
+  { id: "contact" }
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("navbar");
+  const whatsapp = useTranslations("whatsapp");
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
@@ -29,19 +33,20 @@ export default function Navbar() {
               href={`#${item.id}`}
               className="text-sm font-medium text-slate-600 transition hover:text-brand-600"
             >
-              {item.label}
+              {t(item.id)}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          <LanguageSwitcher />
           <Link
-            href={whatsappUrl("Hello, I need details about your services.")}
+            href={whatsappUrl(whatsapp("general"))}
             target="_blank"
             className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02]"
           >
             <FaWhatsapp />
-            WhatsApp Now
+            {t("whatsappNow")}
           </Link>
         </div>
 
@@ -49,9 +54,9 @@ export default function Navbar() {
           type="button"
           className="rounded-md border border-slate-200 px-3 py-2 text-sm font-semibold md:hidden"
           onClick={() => setIsOpen((value) => !value)}
-          aria-label="Toggle menu"
+          aria-label={t("menu")}
         >
-          Menu
+          {t("menu")}
         </button>
       </div>
 
@@ -65,16 +70,17 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="text-sm font-medium text-slate-700"
               >
-                {item.label}
+                {t(item.id)}
               </a>
             ))}
+            <LanguageSwitcher onNavigate={() => setIsOpen(false)} />
             <Link
-              href={whatsappUrl("Hello, I need details about your services.")}
+              href={whatsappUrl(whatsapp("general"))}
               target="_blank"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white"
             >
               <FaWhatsapp />
-              WhatsApp Now
+              {t("whatsappNow")}
             </Link>
           </div>
         </div>

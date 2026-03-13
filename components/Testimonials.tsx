@@ -1,26 +1,15 @@
 import { FaStar } from "react-icons/fa";
-
-const reviews = [
-  {
-    name: "Rakesh Kumar",
-    text: "Very fast PAN correction work. Staff guided every step properly."
-  },
-  {
-    name: "Shabana Parveen",
-    text: "Best place for online forms and bill payments. Charges are reasonable."
-  },
-  {
-    name: "Sanjay Yadav",
-    text: "Reliable money transfer and Aadhaar update support. Highly recommended."
-  }
-];
+import { useTranslations } from "next-intl";
 
 export default function Testimonials() {
+  const t = useTranslations("testimonials");
+  const reviews = t.raw("reviews") as Array<{ name: string; text: string }>;
+
   return (
     <section className="py-16 md:py-20">
       <div className="section-shell">
         <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
-          Customer Reviews
+          {t("title")}
         </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {reviews.map((review) => (

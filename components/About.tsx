@@ -1,20 +1,19 @@
 import { business } from "@/lib/siteData";
+import { useTranslations } from "next-intl";
 
 export default function About() {
+  const t = useTranslations("about");
+
   return (
     <section id="about" className="bg-white py-16 md:py-20">
       <div className="section-shell grid gap-8 md:grid-cols-2">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">About Us</h2>
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{t("title")}</h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-            {business.name} provides digital and financial services to help people easily
-            access government and banking services. We support PAN card application,
-            driving licence assistance, banking services, bill payments, and online form
-            processing with fast and reliable local support.
+            {t("paragraph1", { name: business.name })}
           </p>
           <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-            Our goal is simple: quick service, clear guidance, and trusted assistance for
-            every customer in the local community.
+            {t("paragraph2")}
           </p>
         </div>
 

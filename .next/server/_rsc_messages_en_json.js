@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "_rsc_messages_en_json";
+exports.ids = ["_rsc_messages_en_json"];
+exports.modules = {
+
+/***/ "(rsc)/./messages/en.json":
+/*!**************************!*\
+  !*** ./messages/en.json ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"navbar":{"home":"Home","services":"Services","about":"About","contact":"Contact","whatsappNow":"WhatsApp Now","menu":"Menu","language":"Language"},"hero":{"badge":"Trusted Local Digital Services","title":"Welcome to {name}","subtitle":"All Digital and Financial Services in One Place","description":"We provide PAN Card services, Driving Licence assistance, Fino Payment Bank services, and many other digital services.","whatsapp":"Contact on WhatsApp","callNow":"Call Now"},"services":{"title":"Our Services","subtitle":"Quick, reliable, and affordable digital solutions for your daily government and financial needs.","whatsapp":"Ask on WhatsApp","items":[{"title":"Fino Payment Bank BC","description":"Cash deposit, withdrawal, account opening and banking support.","whatsappMessage":"I want information about Fino Payment Bank BC service."},{"title":"PAN Card Application","description":"New PAN application, correction and status assistance.","whatsappMessage":"I want information about PAN Card service."},{"title":"Driving Licence Services","description":"Learner and permanent licence support with form assistance.","whatsappMessage":"I want information about Driving Licence service."},{"title":"Aadhaar Related Services","description":"Aadhaar update guidance, linking and document support.","whatsappMessage":"I want information about Aadhaar related service."},{"title":"Online Form Fillup","description":"Fast and accurate online application form submission.","whatsappMessage":"I want information about Online Form Fillup service."},{"title":"Money Transfer","description":"Secure domestic money transfer with instant processing.","whatsappMessage":"I want information about Money Transfer service."},{"title":"Insurance Services","description":"Insurance premium support and policy assistance.","whatsappMessage":"I want information about Insurance service."},{"title":"Electricity Bill Payment","description":"Quick electricity and utility bill payment support.","whatsappMessage":"I want information about Electricity Bill Payment service."}]},"howItWorks":{"title":"How It Works","steps":[{"title":"Choose the service you need","description":"Select PAN, Aadhaar, Licence, banking, insurance, or bill payment service."},{"title":"Contact us via WhatsApp or social media","description":"Send your requirement and we guide you with documents and next steps."},{"title":"Submit documents and complete your work","description":"We process your service quickly and keep you updated till completion."}]},"whyChooseUs":{"title":"Why Choose Us","features":["Fast processing","Trusted service","Affordable charges","Experienced support","1000+ happy customers"]},"about":{"title":"About Us","paragraph1":"{name} provides digital and financial services to help people easily access government and banking services. We support PAN card application, driving licence assistance, banking services, bill payments, and online form processing with fast and reliable local support.","paragraph2":"Our goal is simple: quick service, clear guidance, and trusted assistance for every customer in the local community."},"testimonials":{"title":"Customer Reviews","reviews":[{"name":"Rakesh Kumar","text":"Very fast PAN correction work. Staff guided every step properly."},{"name":"Shabana Parveen","text":"Best place for online forms and bill payments. Charges are reasonable."},{"name":"Sanjay Yadav","text":"Reliable money transfer and Aadhaar update support. Highly recommended."}]},"contact":{"title":"Contact Us","whatsapp":"WhatsApp","facebook":"Facebook","instagram":"Instagram","mapTitle":"Google Map Location"},"footer":{"blurb":"Your trusted local partner for digital and financial services.","quickLinks":"Quick Links","social":"Social","rights":"(c) {year} {name}. All rights reserved."},"floatingWhatsapp":{"ariaLabel":"Chat on WhatsApp"},"languageSwitcher":{"en":"English","hi":"हिंदी","bn":"বাংলা"},"whatsapp":{"general":"Hello, I need details about your services.","hero":"Hello, I want to know about your services.","floating":"Hello, I want to know more about your services."}}');
+
+/***/ })
+
+};
+;

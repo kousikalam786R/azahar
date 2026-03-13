@@ -1,13 +1,17 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 import { business, whatsappUrl } from "@/lib/siteData";
 
 export default function Contact() {
+  const t = useTranslations("contact");
+  const whatsapp = useTranslations("whatsapp");
+
   return (
     <section id="contact" className="bg-white py-16 md:py-20">
       <div className="section-shell grid gap-8 lg:grid-cols-2">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Contact Us</h2>
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{t("title")}</h2>
           <div className="mt-6 space-y-4 text-sm text-slate-700 sm:text-base">
             <p className="flex items-start gap-3">
               <FaMapMarkerAlt className="mt-1 text-brand-600" />
@@ -23,12 +27,12 @@ export default function Contact() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href={whatsappUrl("Hello, I need details about your services.")}
+              href={whatsappUrl(whatsapp("general"))}
               target="_blank"
               className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white"
             >
               <FaWhatsapp />
-              WhatsApp
+              {t("whatsapp")}
             </Link>
             <Link
               href={business.facebookUrl}
@@ -36,7 +40,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700"
             >
               <FaFacebookF />
-              Facebook
+              {t("facebook")}
             </Link>
             <Link
               href={business.instagramUrl}
@@ -44,7 +48,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700"
             >
               <FaInstagram />
-              Instagram
+              {t("instagram")}
             </Link>
           </div>
         </div>
@@ -57,7 +61,7 @@ export default function Contact() {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map Location"
+            title={t("mapTitle")}
           />
         </div>
       </div>

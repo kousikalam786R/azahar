@@ -10,7 +10,8 @@ import {
   FaShieldAlt,
   FaWhatsapp
 } from "react-icons/fa";
-import { serviceList, whatsappUrl } from "@/lib/siteData";
+import { useTranslations } from "next-intl";
+import { whatsappUrl } from "@/lib/siteData";
 
 const serviceIcons = [
   FaPiggyBank,
@@ -24,18 +25,26 @@ const serviceIcons = [
 ];
 
 export default function Services() {
+  const t = useTranslations("services");
+  const items = t.raw("items") as Array<{
+    title: string;
+    description: string;
+    whatsappMessage: string;
+  }>;
+
   return (
     <section id="services" className="py-16 md:py-20">
       <div className="section-shell">
-        <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">Our Services</h2>
+        <h2 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
+          {t("title")}
+        </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600 sm:text-base">
-          Quick, reliable, and affordable digital solutions for your daily government and
-          financial needs.
+          {t("subtitle")}
         </p>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceList.map((service, idx) => {
-            const Icon = serviceIcons[idx];
+          {items.map((service, idx) => {
+            const Icon = serviceIcons[idx] ?? FaFileAlt;
             return (
               <article
                 key={service.title}
@@ -52,7 +61,7 @@ export default function Services() {
                   className="mt-5 inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95"
                 >
                   <FaWhatsapp />
-                  Ask on WhatsApp
+                  {t("whatsapp")}
                 </Link>
               </article>
             );
