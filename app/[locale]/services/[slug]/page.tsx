@@ -3,6 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { services } from "@/data/services";
+import { locales } from "@/i18n/config";
 import { whatsappUrl } from "@/lib/siteData";
 
 type ServicePageProps = {
@@ -10,7 +11,7 @@ type ServicePageProps = {
 };
 
 export function generateStaticParams() {
-  return services.map((service) => ({ slug: service.slug }));
+  return locales.flatMap((locale) => services.map((service) => ({ locale, slug: service.slug })));
 }
 
 export default async function ServiceDetailsPage({ params }: ServicePageProps) {

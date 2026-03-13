@@ -8,6 +8,11 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import { locales } from "@/i18n/config";
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default function HomePage() {
   return (
