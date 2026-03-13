@@ -20,6 +20,7 @@
     "title": "Our Services",
     "subtitle": "Quick, reliable, and affordable digital solutions for your daily government and financial needs.",
     "whatsapp": "Ask on WhatsApp",
+    "viewDetails": "View Details",
     "items": [
       {
         "title": "Fino Payment Bank BC",
@@ -118,6 +119,15 @@
     "facebook": "Facebook",
     "instagram": "Instagram",
     "mapTitle": "Google Map Location"
+  },
+  "serviceDetails": {
+    "documents": "Required Documents",
+    "charges": "Service Charges",
+    "time": "Expected Time",
+    "whatsapp": "Contact on WhatsApp",
+    "whatsappMessage": "I want information about {service}",
+    "helperTitle": "Need help with this service?",
+    "helperText": "Share your requirement and we will guide you quickly."
   },
   "footer": {
     "blurb": "Your trusted local partner for digital and financial services.",
