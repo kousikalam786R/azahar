@@ -1,5 +1,5 @@
 export const business = {
-  name: "Ashique Digital Service Center",
+  name: "Digital Azahar",
   phoneDisplay: "+91 9521117176",
   phoneRaw: "9521117176",
   whatsappNumber: "9521117176",
