@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation";
 import { defaultLocale } from "@/i18n/config";
 
+export const runtime = "edge";
+
 type ProductRedirectPageProps = {
   params: Promise<{ slug: string }>;
 };
