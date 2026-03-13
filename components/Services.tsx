@@ -8,11 +8,12 @@ import {
   FaPiggyBank,
   FaShieldAlt
 } from "react-icons/fa";
+import type { IconType } from "react-icons";
 import { useLocale, useTranslations } from "next-intl";
 import ServiceCard from "@/components/ServiceCard";
 import { services } from "@/data/services";
 
-const serviceIcons = {
+const serviceIcons: Record<string, IconType> = {
   "fino-banking": FaPiggyBank,
   "pan-card": FaIdCard,
   "driving-licence": FaCar,
@@ -21,7 +22,7 @@ const serviceIcons = {
   "money-transfer": FaUniversity,
   insurance: FaShieldAlt,
   "electricity-bill": FaBolt
-} as const;
+};
 
 export default function Services() {
   const locale = useLocale();
