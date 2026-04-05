@@ -3,7 +3,7 @@ export const business = {
   phoneDisplay: "+91 7550937255",
   phoneRaw: "7550937255",
   whatsappNumber: "7550937255",
-  address: "Main Road, Near Bus Stand, Your City, India",
+  address: "Near Radha Krishna Mndir, Gorahar, Raiganj, Uttar Dinajpur, West Bengal, India - 733123",
   facebookUrl: "https://facebook.com/",
   instagramUrl: "https://instagram.com/",
   mapEmbedUrl:

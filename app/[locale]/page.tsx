@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import CTABanner from "@/components/CTABanner";
 import FloatingWhatsapp from "@/components/FloatingWhatsapp";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <WhyChooseUs />
         <About />
         <Testimonials />
+        <CTABanner />
         <Contact />
       </main>
       <Footer />

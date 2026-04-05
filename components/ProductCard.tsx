@@ -1,5 +1,8 @@
+"use client";
+
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type ProductCardProps = {
   name: string;
@@ -10,51 +13,101 @@ type ProductCardProps = {
   discount: string;
   rating: number;
   reviews: number;
+  features: string[];
   href: string;
   actionLabel: string;
+  index?: number;
 };
 
 export default function ProductCard({
   name,
-  description,
   image,
   price,
   originalPrice,
   discount,
   rating,
   reviews,
+  features,
   href,
-  actionLabel
+  actionLabel,
+  index = 0
 }: ProductCardProps) {
+  const primaryFeature = features[0] ?? "";
+
   return (
-    <article className="group rounded-xl border border-slate-200 bg-white p-4 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="overflow-hidden rounded-lg bg-slate-100">
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="group relative flex flex-col overflow-hidden rounded-xl bg-white transition-shadow duration-300 hover:shadow-card-hover"
+    >
+      {/* Feature tag */}
+      {primaryFeature && (
+        <div className="absolute left-0 top-3 z-10 rounded-r-full bg-brand-600 px-3 py-1 text-[10px] font-bold text-white">
+          {primaryFeature}
+        </div>
+      )}
+
+      {/* Image area */}
+      <Link href={href} className="relative block bg-gray-50 px-4 pb-2 pt-10">
         <img
           src={image}
           alt={name}
-          className="h-52 w-full object-cover transition duration-300 group-hover:scale-105"
+          className="mx-auto h-36 w-full object-contain transition-transform duration-500 group-hover:scale-105 sm:h-44"
           loading="lazy"
         />
-      </div>
-      <h3 className="mt-4 text-base font-semibold text-slate-900">{name}</h3>
-      <p className="mt-2 text-sm text-slate-600">{description}</p>
-      <div className="mt-3 flex items-center gap-2 text-sm">
-        <span className="inline-flex items-center gap-1 rounded-md bg-green-500 px-2 py-0.5 font-semibold text-white">
-          {rating.toFixed(1)} <FaStar className="text-xs" />
-        </span>
-        <span className="text-slate-500">({reviews})</span>
-      </div>
-      <div className="mt-3 flex items-center gap-2">
-        <span className="text-lg font-bold text-slate-900">{price}</span>
-        <span className="text-sm text-slate-400 line-through">{originalPrice}</span>
-        <span className="text-sm font-semibold text-green-600">{discount}</span>
-      </div>
-      <Link
-        href={href}
-        className="mt-5 inline-flex items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
-      >
-        {actionLabel}
       </Link>
-    </article>
+
+      {/* Card body */}
+      <div className="flex flex-1 flex-col border-t border-gray-50 px-3.5 pb-3.5 pt-3">
+        {/* Rating row */}
+        <div className="flex items-center gap-1.5">
+          <span className="inline-flex items-center gap-0.5 text-xs font-bold text-gray-800">
+            <FaStar className="text-[10px] text-amber-400" />
+            {rating.toFixed(1)}
+          </span>
+          <span className="text-[11px] text-gray-400">{reviews} verified reviews</span>
+        </div>
+
+        {/* Product name */}
+        <Link href={href}>
+          <h3 className="mt-2 text-[13px] font-bold leading-snug text-gray-900 line-clamp-2 group-hover:text-brand-600 transition-colors">
+            {name}
+          </h3>
+        </Link>
+
+        {/* Price row */}
+        <div className="mt-2.5 flex flex-wrap items-baseline gap-1.5">
+          <span className="text-base font-extrabold text-gray-900">{price}</span>
+          <span className="text-xs text-gray-400 line-through">{originalPrice}</span>
+        </div>
+        <span className="mt-1 inline-block w-fit rounded-sm bg-red-50 px-1.5 py-0.5 text-[11px] font-bold text-red-600">
+          {discount}
+        </span>
+
+        {/* Feature pills */}
+        {features.length > 1 && (
+          <div className="mt-2.5 flex flex-wrap gap-1">
+            {features.slice(1, 3).map((feat) => (
+              <span
+                key={feat}
+                className="rounded-full border border-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-500"
+              >
+                {feat}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* CTA */}
+        <Link
+          href={href}
+          className="mt-auto pt-3 inline-flex w-full items-center justify-center rounded-lg bg-brand-600 py-2 text-xs font-bold text-white transition-all hover:bg-brand-700 active:scale-[0.97]"
+        >
+          {actionLabel}
+        </Link>
+      </div>
+    </motion.article>
   );
 }

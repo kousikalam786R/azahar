@@ -20,7 +20,7 @@ export const services: Service[] = [
     slug: "pan-card",
     title: "PAN Card Application",
     description: "We help you apply for a new PAN card quickly and easily.",
-    price: "₹120",
+    price: "₹160",
     time: "7-10 Working Days",
     documents: ["Aadhaar Card", "Passport Size Photo", "Mobile Number"]
   },

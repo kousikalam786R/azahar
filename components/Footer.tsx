@@ -10,62 +10,82 @@ export default function Footer() {
   const whatsapp = useTranslations("whatsapp");
   const year = new Date().getFullYear();
 
+  const links = [
+    { key: "home", href: `/${locale}#home` },
+    { key: "services", href: `/${locale}#services` },
+    { key: "products", href: `/${locale}/products` },
+    { key: "about", href: `/${locale}#about` },
+    { key: "contact", href: `/${locale}#contact` }
+  ];
+
   return (
-    <footer className="border-t border-slate-200 bg-slate-900 py-10 text-slate-300">
-      <div className="section-shell grid gap-8 md:grid-cols-3">
-        <div>
-          <h3 className="text-lg font-bold text-white">{business.name}</h3>
-          <p className="mt-3 text-sm text-slate-400">{t("blurb")}</p>
-        </div>
+    <footer className="border-t border-gray-100 bg-gray-50">
+      <div className="section-shell py-12">
+        <div className="grid gap-10 md:grid-cols-3">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-sm font-black text-white">
+                DA
+              </div>
+              <span className="text-base font-bold text-gray-900">{business.name}</span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-gray-500">{t("blurb")}</p>
+          </div>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
-            {t("quickLinks")}
-          </h3>
-          <div className="mt-3 flex flex-col gap-2 text-sm">
-            <Link href={`/${locale}#home`} className="hover:text-white">
-              {navbar("home")}
-            </Link>
-            <Link href={`/${locale}#services`} className="hover:text-white">
-              {navbar("services")}
-            </Link>
-            <Link href={`/${locale}/products`} className="hover:text-white">
-              {navbar("products")}
-            </Link>
-            <Link href={`/${locale}#about`} className="hover:text-white">
-              {navbar("about")}
-            </Link>
-            <Link href={`/${locale}#contact`} className="hover:text-white">
-              {navbar("contact")}
-            </Link>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">
+              {t("quickLinks")}
+            </h3>
+            <div className="mt-4 flex flex-col gap-2.5 text-sm">
+              {links.map(({ key, href }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  className="text-gray-500 transition-colors hover:text-brand-600"
+                >
+                  {navbar(key)}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">
+              {t("social")}
+            </h3>
+            <div className="mt-4 flex gap-2">
+              <Link
+                href={whatsappUrl(whatsapp("general"))}
+                target="_blank"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-600 transition-colors hover:bg-green-100"
+              >
+                <FaWhatsapp />
+              </Link>
+              <Link
+                href={business.facebookUrl}
+                target="_blank"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors hover:bg-brand-100"
+              >
+                <FaFacebookF />
+              </Link>
+              <Link
+                href={business.instagramUrl}
+                target="_blank"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-600 transition-colors hover:bg-pink-100"
+              >
+                <FaInstagram />
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
-            {t("social")}
-          </h3>
-          <div className="mt-3 flex gap-3">
-            <Link
-              href={whatsappUrl(whatsapp("general"))}
-              target="_blank"
-              className="rounded-full bg-green-500 p-2 text-white transition hover:bg-green-600"
-            >
-              <FaWhatsapp />
-            </Link>
-            <Link href={business.facebookUrl} target="_blank" className="rounded-full bg-white/10 p-2 text-white">
-              <FaFacebookF />
-            </Link>
-            <Link href={business.instagramUrl} target="_blank" className="rounded-full bg-white/10 p-2 text-white">
-              <FaInstagram />
-            </Link>
-          </div>
+        <div className="mt-10 border-t border-gray-200 pt-6 text-center text-xs text-gray-400">
+          {t("rights", { year, name: business.name })}
         </div>
       </div>
-
-      <p className="mt-8 text-center text-xs text-slate-400">
-        {t("rights", { year, name: business.name })}
-      </p>
     </footer>
   );
 }

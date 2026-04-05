@@ -1,13 +1,13 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import ProductsSection from "@/components/ProductsSection";
+import ProductsPageContent from "@/components/ProductsPageContent";
 
 export default function ProductsPage() {
   return (
     <>
       <Navbar />
       <main>
-        <ProductsSection />
+        <ProductsPageContent />
       </main>
       <Footer />
     </>

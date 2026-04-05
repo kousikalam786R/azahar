@@ -19,7 +19,7 @@ export default function LanguageSwitcher({ onNavigate }: LanguageSwitcherProps) 
   const basePath = restPath ? `/${restPath}` : "";
 
   return (
-    <div className="flex items-center gap-2 text-xs sm:text-sm" aria-label={t("language")}>
+    <div className="flex items-center gap-1 text-xs sm:text-sm" aria-label={t("language")}>
       {locales.map((locale) => {
         const isActive = locale === currentLocale;
         const href = `/${locale}${basePath}`;
@@ -29,10 +29,10 @@ export default function LanguageSwitcher({ onNavigate }: LanguageSwitcherProps) 
             href={href}
             onClick={onNavigate}
             aria-current={isActive ? "page" : undefined}
-            className={`rounded-full px-2.5 py-1 font-semibold transition ${
+            className={`rounded-md px-2.5 py-1 font-semibold transition-colors ${
               isActive
                 ? "bg-brand-600 text-white"
-                : "text-slate-600 hover:bg-slate-100 hover:text-brand-600"
+                : "text-gray-500 hover:bg-brand-50 hover:text-brand-700"
             }`}
           >
             {label(locale)}
